@@ -1,0 +1,101 @@
++--------------------------------+
+|           Asansor              |
++--------------------------------+
+| - asansorID: int               |
+| - kapasite: int                |
+| - konum: int                   |
+| - hedefKatlar: List<int>       |
+| - aktifMi: bool                |
++--------------------------------+
+| + asansorCagir(kat: int): void |
+| + hedefEkle(kat: int): void    |
+| + hareketEt(): void            |
+| + kapilariAc(): void           |
+| + kapilariKapat(): void        |
+| + katZiliCal(): void           |
++--------------------------------+
+           ^
+           |
+           |
++--------------------------------+
+|         AsansorKontrolPaneli    |
++--------------------------------+
+| - acilDurumDugmesi: bool        |
+| - hedefDugmeleri: List<int>     |
+| - kapiAcDugmesi: bool           |
+| - kapiKapatDugmesi: bool        |
++--------------------------------+
+| + hedefSec(kat: int): void      |
+| + acilDurumBildir(): void       |
++--------------------------------+
+
++--------------------------------+
+|         KatKontrolPaneli        |
++--------------------------------+
+| - katNo: int                    |
+| - yukariCagriDugmesi: bool      |
+| - asagiCagriDugmesi: bool       |
+| - sinyalIsigi: bool             |
++--------------------------------+
+| + yukariCagir(): void           |
+| + asagiCagir(): void            |
++--------------------------------+
+           ^
+           |
+           |
++--------------------------------+
+|           Kat                  |
++--------------------------------+
+| - katNo: int                   |
+| - zil: bool                    |
+| - asansorKapisiAcik: bool       |
++--------------------------------+
+| + asansorGeldi(): void          |
+| + kapilariAc(): void            |
+| + kapilariKapat(): void         |
++--------------------------------+
+           ^
+           |
+           |
++--------------------------------+
+|           Yolcu                |
++--------------------------------+
+| - yolcuID: int                 |
+| - mevcutKat: int               |
+| - hedefKat: int                |
++--------------------------------+
+| + asansorCagir(kontrolPaneli: KatKontrolPaneli): void |
+| + hedefSec(kontrolPaneli: AsansorKontrolPaneli): void |
++--------------------------------+
+           |
+           |
+           v
++--------------------------------+
+|         SimulasyonSaati         |
++--------------------------------+
+| - zaman: int                   |
++--------------------------------+
+| + zamanGuncelle(): void         |
++--------------------------------+
+
++--------------------------------+
+|     RastgeleYolcuUretici        |
++--------------------------------+
+| + yolcuUret(): Yolcu            |
++--------------------------------+
+           |
+           |
+           v
++--------------------------------+
+|         Simulasyon              |
++--------------------------------+
+| - saat: SimulasyonSaati         |
+| - asansorler: List<Asansor>     |
+| - katlar: List<Kat>             |
+| - yolcular: List<Yolcu>         |
++--------------------------------+
+| + basla(): void                 |
+| + yolcuOlustur(): void          |
+| + hareketEt(): void             |
+| + raporla(): void               |
++--------------------------------+
